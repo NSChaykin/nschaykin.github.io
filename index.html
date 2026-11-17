@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nikita Chaykin - Lead Game Designer</title>
+<meta name="description" content="Lead Game Designer focused on F2P economy and monetization. Remote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f6f4ef;--card:#fff;--ink:#1d1d1f;--muted:#5d5d63;--line:#e3e0d8;--accent:#e2562b;--accent-soft:#fbe6dd}
+  @media (prefers-color-scheme: dark){:root{--bg:#141416;--card:#1c1c20;--ink:#f1f0ec;--muted:#a3a3ab;--line:#2c2c33;--accent:#ff7a4d;--accent-soft:#3a2219}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 20px 64px}
+  .lang{position:fixed;top:14px;right:14px;display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+  .lang button{border:0;background:none;color:var(--muted);font:600 13px Inter;padding:6px 12px;border-radius:999px;cursor:pointer}
+  .lang button.on{background:var(--ink);color:var(--bg)}
+  header{display:flex;gap:28px;align-items:center;margin:24px 0 40px}
+  header img{width:116px;height:116px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+  h1{font:700 40px/1.1 "Space Grotesk",Inter,sans-serif;margin:0 0 6px;letter-spacing:-.5px}
+  .role{font:500 18px Inter;color:var(--accent);margin:0 0 8px}
+  .meta{color:var(--muted);margin:0}
+  .lead{font-size:20px;line-height:1.55;margin:0 0 40px}
+  h2{font:700 13px Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:48px 0 16px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .card h3{font:700 17px "Space Grotesk",Inter;margin:0 0 6px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:14px}
+  .case .proj{font:500 13px Inter;color:var(--muted);margin:0 0 4px}
+  .case h3{font:700 21px/1.25 "Space Grotesk",Inter;margin:0 0 14px}
+  .case dl{display:grid;grid-template-columns:110px 1fr;gap:6px 14px;margin:0}
+  .case dt{font:600 13px Inter;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+  .case dd{margin:0}
+  .num{display:inline-block;background:var(--accent-soft);color:var(--accent);font:700 15px Inter;padding:2px 10px;border-radius:8px}
+  .open{background:var(--ink);color:var(--bg);border-radius:16px;padding:24px 26px}
+  .open p{margin:0}
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .links a{color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;text-decoration:none;font-weight:500}
+  .links a.main{background:var(--accent);border-color:var(--accent);color:#fff}
+  .stack{color:var(--muted);font-size:15px}
+  [data-lang]{display:none}
+  body.en [data-lang=en], body.ru [data-lang=ru]{display:revert}
+  @media (max-width:560px){header{flex-direction:column;align-items:flex-start;gap:16px}h1{font-size:32px}.case dl{grid-template-columns:1fr}.case dt{padding-top:8px}}
+</style>
+</head>
+<body class="en">
+<div class="lang"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-ru" onclick="setLang('ru')">RU</button></div>
+<div class="wrap">
+
+<header>
+  <img src="photo.jpg" alt="Nikita Chaykin">
+  <div>
+    <h1 data-lang="en">Nikita Chaykin</h1><h1 data-lang="ru">Никита Чайкин</h1>
+    <p class="role" data-lang="en">Lead Game Designer · F2P economy &amp; monetization</p>
+    <p class="role" data-lang="ru">Лид-геймдизайнер · экономика и монетизация F2P</p>
+    <p class="meta" data-lang="en">8+ years in game design, incl. 3 as a Game Master · Remote</p>
+    <p class="meta" data-lang="ru">8+ лет в геймдизайне, из них 3 - мастером настольных игр · Удалённо</p>
+  </div>
+</header>
+
+<p class="lead" data-lang="en">I take a live game, dig into its economy and bring revenue back to growth.</p>
+<p class="lead" data-lang="ru">Беру живую игру, разбираюсь в её экономике и возвращаю выручке рост.</p>
+
+<h2 data-lang="en">What I focus on</h2><h2 data-lang="ru">На чём фокусируюсь</h2>
+<div class="grid">
+  <div class="card"><h3 data-lang="en">Economy &amp; balance</h3><h3 data-lang="ru">Экономика и баланс</h3>
+    <p data-lang="en">Sources and sinks, progression, balance calculators. I build the math myself, I have a degree in finance.</p>
+    <p data-lang="ru">Источники и стоки, прогрессия, калькуляторы баланса. Считаю сам, по образованию финансист.</p></div>
+  <div class="card"><h3 data-lang="en">Monetization</h3><h3 data-lang="ru">Монетизация</h3>
+    <p data-lang="en">Offers, battle passes, collections, events. A/B tests on prices and discounts, payer conversion.</p>
+    <p data-lang="ru">Офферы, боевые пропуска, коллекции, ивенты. A/B-тесты цен и скидок, конверсия в платящих.</p></div>
+  <div class="card"><h3 data-lang="en">LiveOps &amp; team</h3><h3 data-lang="ru">LiveOps и команда</h3>
+    <p data-lang="en">Roadmap, releases, story-driven events. Led 5-10 game designers, hired and mentored them.</p>
+    <p data-lang="ru">Роадмап, релизы, сюжетные ивенты. Руководил 5-10 геймдизайнерами, нанимал и растил их.</p></div>
+  <div class="card"><h3 data-lang="en">AI in production</h3><h3 data-lang="ru">ИИ в производстве</h3>
+    <p data-lang="en">I make the calls on numbers and design. AI agents take research, docs and tracker routine, several times faster.</p>
+    <p data-lang="ru">Решения по цифрам и дизайну принимаю я. Ресёрч, документы и рутину в трекерах ведут ИИ-агенты, в разы быстрее.</p></div>
+</div>
+
+<h2 data-lang="en">Cases</h2><h2 data-lang="ru">Кейсы</h2>
+
+<div class="case">
+  <p class="proj">Kiss me · social casual game · VK, Odnoklassniki, Facebook, Android, PC · 2024-2026</p>
+  <h3 data-lang="en">Stopped a revenue decline on a long-running game</h3>
+  <h3 data-lang="ru">Остановил спад выручки на многолетней игре</h3>
+  <dl>
+    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
+    <dd data-lang="en">A game with 5+ years of history was losing revenue.</dd>
+    <dd data-lang="ru">Игра с историей больше 5 лет теряла выручку.</dd>
+    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
+    <dd data-lang="en">Owned monetization as Lead Game Designer with producer duties: new features, sinks for accumulated resources, offers, events, battle pass rework, roadmap and releases.</dd>
+    <dd data-lang="ru">Отвечал за монетизацию как лид-геймдизайнер с функциями продюсера: новые фичи, стоки накопленных ресурсов, офферы, ивенты, пересборка боевого пропуска, роадмап и релизы.</dd>
+    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
+    <dd data-lang="en"><span class="num">revenue 2x+</span> several monthly records over 5+ years of history; growth in LTV, ARPDAU and ARPPDAU; top-5 in its genre by audience and revenue (AppMagic).</dd>
+    <dd data-lang="ru"><span class="num">выручка ×2+</span> несколько месячных рекордов за 5+ лет истории; рост LTV, ARPDAU и ARPPDAU; топ-5 в своём жанре по аудитории и выручке (AppMagic).</dd>
+  </dl>
+</div>
+
+<div class="case">
+  <p class="proj">Tanki Online · multiplayer tank action · 2021-2022</p>
+  <h3 data-lang="en">Rebuilt special offers: more revenue, smaller discounts</h3>
+  <h3 data-lang="ru">Пересобрал спецпредложения: больше выручки при меньших скидках</h3>
+  <dl>
+    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
+    <dd data-lang="en">Offers were mostly resource bundles with deep discounts.</dd>
+    <dd data-lang="ru">Офферы были в основном наборами ресурсов с большой скидкой.</dd>
+    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
+    <dd data-lang="en">On my own initiative, built a model of targeted offers: each one solves a specific player need.</dd>
+    <dd data-lang="ru">По своей инициативе построил модель целевых офферов: каждый закрывает конкретную задачу игрока.</dd>
+    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
+    <dd data-lang="en"><span class="num">offer revenue 2x</span> with an average discount about 1.5-2x lower.</dd>
+    <dd data-lang="ru"><span class="num">выручка от офферов ×2</span> при средней скидке примерно в 1,5-2 раза ниже.</dd>
+  </dl>
+</div>
+
+<div class="case">
+  <p class="proj">Arcane Crystals: Match-3 RPG · Android · 2022-2024</p>
+  <h3 data-lang="en">From a team without a game to release</h3>
+  <h3 data-lang="ru">От команды без игры до релиза</h3>
+  <dl>
+    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
+    <dd data-lang="en">I joined when there was a team but no game yet, and the vision changed along the way.</dd>
+    <dd data-lang="ru">Пришёл, когда команда была, а игры ещё не было, и вижн по ходу менялся.</dd>
+    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
+    <dd data-lang="en">Designed 3 balance systems and wrote the whole narrative three times, from lore to dialogue. Brought neural networks into the art pipeline and trained the team.</dd>
+    <dd data-lang="ru">Спроектировал 3 системы баланса и трижды написал весь нарратив, от лора до диалогов. Внедрил нейросети в работу художников и обучил команду.</dd>
+    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
+    <dd data-lang="en"><span class="num">art 5x faster</span> the game reached release.</dd>
+    <dd data-lang="ru"><span class="num">арт в 5 раз быстрее</span> игра вышла в релиз.</dd>
+  </dl>
+</div>
+
+<div class="case">
+  <p class="proj">Last Oasis Survivor · mobile 4X strategy · 2026</p>
+  <h3 data-lang="en">Contract work on a mobile 4X</h3>
+  <h3 data-lang="ru">Контрактная работа над мобильной 4X</h3>
+  <dl>
+    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
+    <dd data-lang="en">Second construction queue mechanic, battle pass tables, push notification management, player onboarding. References available on request.</dd>
+    <dd data-lang="ru">Механика второй очереди строительства, таблицы боевого пропуска, система управления пушами, онбординг игроков. Рекомендации - по запросу.</dd>
+  </dl>
+</div>
+
+<h2 data-lang="en">Before games</h2><h2 data-lang="ru">До игр</h2>
+<p data-lang="en">For three years I ran tabletop role-playing games professionally: 5000+ hours, my own setting and module, which I presented at a games convention by invitation. That is where I learned to read players.</p>
+<p data-lang="ru">Три года профессионально вёл настольные ролевые игры: 5000+ часов, свой сеттинг и модуль, с которым выступал на игровом конвенте по приглашению. Там я научился читать игроков.</p>
+
+<h2 data-lang="en">Open to</h2><h2 data-lang="ru">Что ищу</h2>
+<div class="open">
+  <p data-lang="en">Lead Game Designer or Game Producer roles on F2P games: economy, monetization, LiveOps. Remote. Working language Russian; my written English is fluent.</p>
+  <p data-lang="ru">Роль лид-геймдизайнера или продюсера на F2P: экономика, монетизация, LiveOps. Удалённо. Рабочий язык - русский; письменный английский свободный.</p>
+</div>
+<div class="links">
+  <a class="main" href="mailto:chaykin.ns@gmail.com">chaykin.ns@gmail.com</a>
+  <a href="https://t.me/ChaykinNS">Telegram @ChaykinNS</a>
+  <a href="https://www.linkedin.com/in/nikita-chaykin/">LinkedIn</a>
+  <a href="cv/Chaykin_Nikita_Lead_Game_Designer_EN.pdf" data-lang="en">Download CV</a><a href="cv/Chaykin_Nikita_Lead_Game_Designer_RU.pdf" data-lang="ru">Скачать резюме</a>
+</div>
+
+<p class="stack" style="margin-top:36px" data-lang="en">Tools: Google Sheets, Jira, Confluence, game configs and admin panels, Claude, ChatGPT, Midjourney, Stable Diffusion.</p>
+<p class="stack" style="margin-top:36px" data-lang="ru">Инструменты: Google Таблицы, Jira, Confluence, конфиги и админки, Claude, ChatGPT, Midjourney, Stable Diffusion.</p>
+</div>
+<script>
+function setLang(l){document.body.className=l;document.documentElement.lang=l;document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ru').classList.toggle('on',l==='ru');try{localStorage.setItem('lang',l)}catch(e){}}
+try{var s=localStorage.getItem('lang');if(s)setLang(s);else if((navigator.language||'').startsWith('ru'))setLang('ru')}catch(e){}
+</script>
+</body>
+</html>
