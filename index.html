@@ -90,18 +90,40 @@ dd{margin:0;color:var(--soft)}
 /* recruiter panel */
 .ov{position:fixed;inset:0;background:#0b0c0fcc;display:none;align-items:center;justify-content:center;padding:16px;z-index:20}
 .ov.show{display:flex}
-.rp{width:100%;max-width:620px;max-height:92vh;overflow:auto;background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:22px 24px;box-shadow:8px 8px 0 #ff7a4d55}
-.rp-head{display:flex;justify-content:space-between;align-items:center;font:700 12px "JetBrains Mono";letter-spacing:.14em;color:var(--accent)}
-.rp-head button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;font:700 11px "JetBrains Mono";padding:4px 8px;cursor:pointer}
-.rp h3{font:700 29px/1.1 Onest,sans-serif;margin:10px 0 2px;letter-spacing:-.015em}
-.rp .who{color:var(--soft);margin:0 0 14px}
-.rp ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}
-.rp li{background:var(--panel2);border-radius:4px;padding:10px 12px;font-size:15px;color:var(--soft)}
-.rp li .num{margin-right:8px}
-.timer{height:3px;background:var(--line);border-radius:2px;margin:12px 0 0;overflow:hidden}
+.rp{width:100%;max-width:820px;max-height:94vh;overflow:auto;background:var(--panel);border:1px solid var(--accent);border-radius:10px;padding:26px 30px 24px;box-shadow:10px 10px 0 #ff7a4d44}
+.rp-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font:700 12px "JetBrains Mono";letter-spacing:.14em;color:var(--accent)}
+.rp-head .clock{font:700 22px "JetBrains Mono";color:var(--ink);letter-spacing:.04em;min-width:3ch;text-align:right}
+.rp-head .clock.done{color:var(--ok)}
+.rp-head button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;font:700 11px "JetBrains Mono";padding:5px 9px;cursor:pointer}
+.rp h3{font:700 32px/1.1 Onest,sans-serif;margin:12px 0 4px;letter-spacing:-.015em}
+.rp .who{color:var(--soft);margin:0 0 20px;font-size:17px}
+.trophies{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.trophy{background:var(--panel2);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px;padding:16px 16px 14px}
+.trophy b{display:block;font:800 40px/1 "JetBrains Mono";color:var(--accent);margin-bottom:8px}
+.trophy span{display:block;color:var(--soft);font-size:14.5px;line-height:1.45}
+.trophy em{display:block;font:700 11px "JetBrains Mono";letter-spacing:.12em;color:var(--muted);font-style:normal;margin-bottom:6px;text-transform:uppercase}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.facts>span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--soft);background:var(--bg)}
+.facts>span b{color:var(--muted);font:700 11px "JetBrains Mono";letter-spacing:.1em;margin-right:6px}
+.brief{background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-bottom:18px}
+.brief-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;font:700 11px "JetBrains Mono";letter-spacing:.12em;color:var(--muted)}
+.brief p{margin:0;color:var(--soft);font-size:15px;line-height:1.55}
+.copy{border:1px solid var(--accent);background:none;color:var(--accent);border-radius:4px;font:700 12px "JetBrains Mono";letter-spacing:.06em;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.copy.ok{background:var(--accent);color:#15171c}
+.edge{margin-bottom:18px}
+.edge-top{font:700 11px "JetBrains Mono";letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+.edge ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.edge li{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:11px 13px;color:var(--soft);font-size:14.5px;line-height:1.45}
+.edge li b{font:700 12px "JetBrains Mono";color:var(--accent);padding-top:2px}
+.rp .btn{padding:11px 14px;font-size:13px}
+.btn.ok{background:var(--accent);color:#15171c;border-color:var(--accent)}
+@media (max-width:720px){.edge ul{grid-template-columns:minmax(0,1fr)}}
+.timer{height:3px;background:var(--line);border-radius:2px;margin:16px 0 0;overflow:hidden}
 .timer i{display:block;height:100%;width:0;background:var(--accent)}
 .ov.show .timer i{animation:fill 60s linear forwards}
 @keyframes fill{to{width:100%}}
+@media (max-width:720px){.rp{padding:20px 18px}.trophies{grid-template-columns:minmax(0,1fr)}.trophy b{font-size:34px}.rp h3{font-size:26px}}
+@media (prefers-reduced-motion:reduce){.ov.show .timer i{animation:none;width:100%}}
 
 @media (max-width:720px){
  .hero{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:28px}
@@ -256,7 +278,7 @@ dd{margin:0;color:var(--soft)}
 <p class="text" data-lang="en">For three years I ran tabletop role-playing games professionally: 5000+ hours, my own setting and module, which I presented at a games convention by invitation. That is where I learned to read players.</p>
 <p class="text" data-lang="ru">Три года профессионально вёл настольные ролевые игры: 5000+ часов, свой сеттинг и модуль, с которым выступал на игровом конвенте по приглашению. Там я научился читать игроков.</p>
 
-<h2 id="contact" data-lang="en">// Open to</h2><h2 data-lang="ru">// Что ищу</h2>
+<h2 id="contact" data-lang="en">// How I can help</h2><h2 data-lang="ru">// Чем могу быть полезен</h2>
 <div class="open">
   <p data-lang="en">Lead Game Designer or Game Producer roles on F2P games: economy, monetization, LiveOps. Remote. Working language Russian; my written English is fluent.</p>
   <p data-lang="ru">Роль лид-геймдизайнера или продюсера на F2P: экономика, монетизация, LiveOps. Удалённо. Рабочий язык - русский; письменный английский свободный.</p>
@@ -274,20 +296,37 @@ dd{margin:0;color:var(--soft)}
 
 <!-- recruiter mode -->
 <div class="ov" id="ov" onclick="if(event.target===this)closeRP()">
-  <div class="rp" role="dialog" aria-modal="true">
-    <div class="rp-head"><span data-lang="en">RECRUITER MODE · 60 SEC</span><span data-lang="ru">РЕЖИМ РЕКРУТЁРА · 60 СЕК</span><button onclick="closeRP()">ESC</button></div>
-    <h3 data-lang="en">Nikita Chaykin</h3><h3 data-lang="ru">Никита Чайкин</h3>
-    <p class="who" data-lang="en">Lead Game Designer / Producer · F2P economy, monetization, LiveOps · 8+ years · remote</p>
-    <p class="who" data-lang="ru">Лид-геймдизайнер / Продюсер · экономика, монетизация F2P, LiveOps · 8+ лет · удалённо</p>
-    <ul>
-      <li><span class="num" data-lang="en">revenue 2x+</span><span class="num" data-lang="ru">выручка ×2+</span><span data-lang="en">Kiss me (a 10-year-old game): revenue was falling - I stopped the decline and brought back growth, many records for the game's entire history</span><span data-lang="ru">Kiss me (игре 10 лет): выручка падала - остановил спад и вернул рост, множество рекордов за всё время игры</span></li>
-      <li><span class="num" data-lang="en">offer revenue 2x</span><span class="num" data-lang="ru">выручка офферов ×2</span><span data-lang="en">Tanki Online: rebuilt special offers - their revenue doubled while discounts got 1.5-2x smaller</span><span data-lang="ru">Tanki Online: переделал спецпредложения - выручка с них выросла вдвое, а скидки стали в 1,5-2 раза меньше</span></li>
-      <li><span class="num" data-lang="en">art 5x faster</span><span class="num" data-lang="ru">арт ×5 быстрее</span><span data-lang="en">Arcane Crystals: brought neural networks into the artists' work - art got made 5x faster; the game reached release</span><span data-lang="ru">Arcane Crystals: внедрил нейросети в работу художников - арт стали делать в 5 раз быстрее; игра вышла в релиз</span></li>
-      <li><span class="num" data-lang="en">team</span><span class="num" data-lang="ru">команда</span><span data-lang="en">Led teams of up to 10 people directly, hired and mentored</span><span data-lang="ru">Руководил командами до 10 человек напрямую, нанимал и растил</span></li>
-    </ul>
+  <div class="rp" role="dialog" aria-modal="true" aria-labelledby="rp-title">
+    <div class="rp-head"><span data-lang="en">RECRUITER MODE</span><span data-lang="ru">РЕЖИМ РЕКРУТЁРА</span><span style="display:flex;align-items:center;gap:12px"><span class="clock" id="clock">60</span><button onclick="closeRP()">ESC</button></span></div>
+    <h3 id="rp-title" data-lang="en">Nikita Chaykin</h3><h3 data-lang="ru">Никита Чайкин</h3>
+    <p class="who" data-lang="en">Lead Game Designer / Producer · F2P economy, monetization, LiveOps</p>
+    <p class="who" data-lang="ru">Лид-геймдизайнер / Продюсер · экономика, монетизация F2P, LiveOps</p>
+    <div class="trophies">
+      <div class="trophy"><em>Kiss me</em><b>×2+</b><span data-lang="en">revenue on a 10-year-old game that was declining</span><span data-lang="ru">выручка игры с 10-летней историей, которая падала</span></div>
+      <div class="trophy"><em>Tanki Online</em><b>×2</b><span data-lang="en">offer revenue, with discounts 1.5-2x smaller</span><span data-lang="ru">выручка от офферов при скидках в 1,5-2 раза меньше</span></div>
+      <div class="trophy"><em>Arcane Crystals</em><b>×5</b><span data-lang="en">faster art after bringing AI into the artists' work</span><span data-lang="ru">быстрее арт после внедрения нейросетей в работу художников</span></div>
+    </div>
+    <div class="facts">
+      <span><b data-lang="en">EXP</b><b data-lang="ru">ОПЫТ</b><span data-lang="en">8+ years</span><span data-lang="ru">8+ лет</span></span>
+      <span><b data-lang="en">TEAM</b><b data-lang="ru">КОМАНДА</b><span data-lang="en">up to 10 people directly</span><span data-lang="ru">до 10 человек напрямую</span></span>
+      <span><b data-lang="en">FORMAT</b><b data-lang="ru">ФОРМАТ</b><span data-lang="en">remote</span><span data-lang="ru">удалённо</span></span>
+      <span><b data-lang="en">LANG</b><b data-lang="ru">ЯЗЫК</b><span data-lang="en">Russian; fluent written English</span><span data-lang="ru">русский; письменный английский свободный</span></span>
+    </div>
+    <div class="edge">
+      <div class="edge-top"><span data-lang="en">WHAT SETS ME APART</span><span data-lang="ru">ЧЕМ ОТЛИЧАЮСЬ</span></div>
+      <ul>
+        <li><b>▸</b><span data-lang="en">Finance degree: I build the economy and balance math myself.</span><span data-lang="ru">Финансист по образованию: экономику и баланс считаю сам.</span></li>
+        <li><b>▸</b><span data-lang="en">3 years running tabletop RPGs professionally, 5000+ hours: I know how to read players.</span><span data-lang="ru">3 года профессионально вёл настольные RPG, 5000+ часов: умею читать игроков.</span></li>
+        <li><b>▸</b><span data-lang="en">My department ran ahead of plan and never blocked development.</span><span data-lang="ru">Мой отдел шёл с опережением планов и никогда не блокировал разработку.</span></li>
+        <li><b>▸</b><span data-lang="en">AI agents in my work: docs, balance work and routine several times faster.</span><span data-lang="ru">ИИ-агенты в работе: документы, баланс и рутина в разы быстрее.</span></li>
+      </ul>
+      <p id="brief-en" hidden>Nikita Chaykin - Lead Game Designer / Producer, F2P economy, monetization and LiveOps, 8+ years. Kiss me: stopped the revenue decline of a 10-year-old game, revenue 2x+. Tanki Online: offer revenue 2x with 1.5-2x smaller discounts. Directly led teams of up to 10 people. Remote. Portfolio and CV: nschaykin.github.io</p><p id="brief-ru" hidden>Никита Чайкин - лид-геймдизайнер / продюсер, экономика, монетизация F2P и LiveOps, 8+ лет. Kiss me: остановил спад выручки игры с 10-летней историей, выручка ×2+. Tanki Online: выручка от офферов ×2 при скидках в 1,5-2 раза меньше. Руководил командами до 10 человек напрямую. Удалённо. Портфолио и резюме: nschaykin.github.io</p>
+    </div>
     <div class="btns" style="margin-top:0">
-      <a class="btn main" href="mailto:chaykin.ns@gmail.com" data-lang="en">WRITE ME</a><a class="btn main" href="mailto:chaykin.ns@gmail.com" data-lang="ru">НАПИСАТЬ</a>
+      <button class="btn main" onclick="copyMail(this)"><span data-lang="en">COPY EMAIL</span><span data-lang="ru">СКОПИРОВАТЬ EMAIL</span></button>
+      <button class="btn copy-sum" onclick="copyBrief(this)"><span data-lang="en">COPY SUMMARY</span><span data-lang="ru">СКОПИРОВАТЬ САММАРИ</span></button>
       <a class="btn" href="cv/Chaykin_Nikita_Lead_Game_Designer_EN.pdf" target="_blank" rel="noopener" data-lang="en">CV PDF</a><a class="btn" href="cv/Chaykin_Nikita_Lead_Game_Designer_RU.pdf" target="_blank" rel="noopener" data-lang="ru">РЕЗЮМЕ PDF</a>
+      <a class="btn" href="https://t.me/ChaykinNS" target="_blank" rel="noopener">TELEGRAM</a>
       <a class="btn" href="https://www.linkedin.com/in/nikita-chaykin/" target="_blank" rel="noopener">LINKEDIN</a>
     </div>
     <div class="timer"><i></i></div>
@@ -298,8 +337,13 @@ dd{margin:0;color:var(--soft)}
 function setLang(l){document.body.className=l;document.documentElement.lang=l;document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ru').classList.toggle('on',l==='ru');try{localStorage.setItem('lang',l)}catch(e){}}
 try{var s=localStorage.getItem('lang');if(s)setLang(s);else if((navigator.language||'').startsWith('ru'))setLang('ru')}catch(e){}
 var ov=document.getElementById('ov');
-function openRP(){ov.classList.remove('show');void ov.offsetWidth;ov.classList.add('show')}
-function closeRP(){ov.classList.remove('show')}
+var tick=null;
+function openRP(){ov.classList.remove('show');void ov.offsetWidth;ov.classList.add('show');var c=document.getElementById('clock'),s=60;c.textContent=s;c.classList.remove('done');clearInterval(tick);tick=setInterval(function(){s--;if(s<=0){clearInterval(tick);c.textContent=document.body.classList.contains('ru')?'Успели. Спасибо за время':'Done. Thanks for your time';c.classList.add('done');c.style.fontSize='13px'}else{c.textContent=s;c.style.fontSize=''}},1000)}
+function closeRP(){ov.classList.remove('show');clearInterval(tick)}
+function flash(b,ru,en){var o=b.innerHTML;b.classList.add('ok');b.textContent=document.body.classList.contains('ru')?ru:en;setTimeout(function(){b.innerHTML=o;b.classList.remove('ok')},1600)}
+function copyText(x,b){(navigator.clipboard?navigator.clipboard.writeText(x):Promise.reject()).then(function(){flash(b,'СКОПИРОВАНО','COPIED')},function(){var a=document.createElement('textarea');a.value=x;document.body.appendChild(a);a.select();try{document.execCommand('copy');flash(b,'СКОПИРОВАНО','COPIED')}catch(e){}a.remove()})}
+function copyBrief(b){copyText(document.getElementById(document.body.classList.contains('ru')?'brief-ru':'brief-en').textContent,b)}
+function copyMail(b){copyText('chaykin.ns@gmail.com',b)}
 document.addEventListener('keydown',function(e){var t=(e.target.tagName||'').toLowerCase();if(t==='input'||t==='textarea')return;if((e.key==='r'||e.key==='R'||e.key==='к'||e.key==='К')&&!e.ctrlKey&&!e.metaKey)openRP();if(e.key==='Escape')closeRP()});
 if(location.hash==='#recruiter')openRP();
 document.querySelectorAll('.slot').forEach(function(a){a.addEventListener('click',function(e){var el=document.querySelector(a.getAttribute('href'));if(!el)return;e.preventDefault();var y=el.getBoundingClientRect().top+scrollY-70;scrollTo({top:y,behavior:'smooth'});var box=el.closest('.case,.skill')||(el.id==='team'?el.parentNode.querySelector('.team'):null)||(el.id==='tabletop'?el.parentNode.querySelector('.text:not([style*=none])'):el)||el;box.classList.remove('flash');void box.offsetWidth;box.classList.add('flash')})});
