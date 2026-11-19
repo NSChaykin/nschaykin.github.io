@@ -38,7 +38,7 @@ h1{font:700 56px/1.02 Onest,sans-serif;margin:10px 0 14px;letter-spacing:-.025em
 .port:after{bottom:0;right:0;border-left:0;border-top:0}
 
 /* HUD */
-.hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);background:var(--panel);border-radius:6px}
+.hud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);background:var(--panel);border-radius:6px}
 .hud div{padding:14px 16px;border-right:1px solid var(--line)}
 .hud div:last-child{border-right:0}
 .hud b{display:block;font:700 11px "JetBrains Mono";letter-spacing:.14em;color:var(--accent);margin-bottom:4px}
@@ -107,9 +107,9 @@ dd{margin:0;color:var(--soft)}
  .hero{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:28px}
  .port{width:150px;order:-1}
  h1{font-size:40px}
- .hud{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
- .hud div:nth-child(2){border-right:0}
- .hud div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .hud{grid-template-columns:minmax(0,1fr)}
+ .hud div{border-right:0}
+ .hud div:not(:last-child){border-bottom:1px solid var(--line)}
  .grid{grid-template-columns:minmax(0,1fr)}
  dl{grid-template-columns:minmax(0,1fr)}
  dt{padding-top:8px}
@@ -145,7 +145,6 @@ dd{margin:0;color:var(--soft)}
   <div><b data-lang="en">ROLE</b><b data-lang="ru">РОЛЬ</b><span data-lang="en">Lead GD / Producer</span><span data-lang="ru">Lead GD / продюсер</span></div>
   <div><b data-lang="en">FOCUS</b><b data-lang="ru">ФОКУС</b><span data-lang="en">F2P economy, monetization, LiveOps</span><span data-lang="ru">Экономика, монетизация F2P, LiveOps</span></div>
   <div><b data-lang="en">EXPERIENCE</b><b data-lang="ru">ОПЫТ</b><span data-lang="en">8+ years · teams up to 10</span><span data-lang="ru">8+ лет · команды до 10 человек</span></div>
-  <div><b data-lang="en">STATUS</b><b data-lang="ru">СТАТУС</b><span><i class="dot"></i><span data-lang="en">Open to work · remote</span><span data-lang="ru">Ищу работу · удалённо</span></span></div>
 </div>
 
 <div class="btns">
