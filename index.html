@@ -81,6 +81,39 @@ dt{font:700 11px "JetBrains Mono";color:var(--muted);letter-spacing:.12em;paddin
 dd{margin:0;color:var(--soft)}
 .num{display:inline-block;background:#ffb54722;color:var(--accent);font-weight:700;padding:1px 10px;border-radius:4px;margin-right:4px}
 
+.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.tab{background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;font:700 12px "JetBrains Mono";letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;cursor:pointer}
+.tab:hover{color:var(--ink);border-color:var(--muted)}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#15171c}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pane{display:none;color:var(--soft)}
+.pane.on{display:block}
+.pane p{margin:0 0 8px}
+.pane .big{font-size:17px}
+.pane .hyp{border-left:2px solid var(--accent);padding-left:12px;color:var(--soft)}
+.pane .hyp b{color:var(--accent)}
+.pane ul{margin:0;padding-left:18px}
+.pane li{margin:0 0 6px}
+.pane .note{color:var(--muted);font-size:14px;margin-top:8px}
+.layer{display:flex;align-items:center;gap:12px;margin:0 0 10px;flex-wrap:wrap}
+.segs{display:flex;gap:4px}
+.segs i{width:34px;height:6px;border-radius:3px;background:var(--line);display:block;transition:background .2s}
+.segs i.seen{background:#ffb54766}
+.segs i.cur{background:var(--accent);box-shadow:0 0 8px #ffb54788}
+.lhint{font:700 13px "JetBrains Mono";letter-spacing:.04em;color:var(--accent)}
+.lhint b{color:var(--ink)}
+.tab{position:relative}
+.tab.new::after{content:"";position:absolute;top:-4px;right:-4px;width:9px;height:9px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 2px var(--panel);animation:pulse 1.6s infinite}
+.tab{display:inline-flex;align-items:center;gap:7px}
+.tab svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nextl{margin-top:14px;background:var(--accent);border:1px solid var(--accent);color:#15171c;border-radius:4px;font:700 14px "JetBrains Mono";letter-spacing:.05em;padding:10px 16px;cursor:pointer;box-shadow:3px 3px 0 var(--accent2)}
+.nextl:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--accent2)}
+.case.has-art{display:grid;grid-template-columns:minmax(0,1fr) 260px;column-gap:22px}
+.case.has-art>*{grid-column:1}
+.case.has-art .art{grid-column:2;grid-row:1 / span 6;align-self:start}
+.art svg{width:100%;height:auto;display:block}
+@media (max-width:720px){.case.has-art{grid-template-columns:minmax(0,1fr)}.case.has-art .art{grid-column:1;grid-row:auto;order:-1;max-width:260px;margin-bottom:10px}}
+@media (prefers-reduced-motion:reduce){.tab.new::after{animation:none}}
 .text{color:var(--soft);margin:0}
 .open{background:var(--panel2);border:1px solid var(--accent);border-radius:6px;padding:20px 24px;color:var(--ink)}
 .open p{margin:0}
@@ -201,59 +234,109 @@ dd{margin:0;color:var(--soft)}
 
 <h2 data-lang="en">// Cases</h2><h2 data-lang="ru">// Кейсы</h2>
 
-<div class="case" id="c1">
-  <p class="proj"><span data-lang="en">Case 01</span><span data-lang="ru">Кейс 01</span> · Kiss me · social casual · VK, OK, Facebook, Android, PC · 2024-2026</p>
+<div class="case has-art" id="c1">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 260 170">
+<defs><pattern id="bp1" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" fill="none" stroke="#ffb54714" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="170" rx="6" fill="url(#bp1)" stroke="#ffb54733"/>
+<g fill="none" stroke="#ffb547" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="130" cy="98" rx="92" ry="34" stroke-dasharray="5 5" stroke-width="1.2"/>
+<path d="M72 84 H146 Q162 84 170 93 H192 V103 H170 Q162 112 146 112 H72 Q60 112 60 98 Q60 84 72 84 Z"/>
+<path d="M192 91 H200 V105 H192"/>
+<path d="M92 84 V112 M128 84 V112"/>
+<circle cx="125" cy="98" r="3"/>
+<path d="M214 70 Q228 84 222 102" /><path d="M216 98 L222 103 L226 96"/>
+<path d="M46 126 Q32 112 38 94"/><path d="M44 98 L38 93 L34 100"/>
+</g>
+<g fill="none" stroke="#8d94a1" stroke-width="1" stroke-dasharray="3 3"><path d="M125 98 L190 44"/><path d="M38 146 H222"/><path d="M38 141 V151 M222 141 V151"/></g>
+<g font-family="JetBrains Mono, monospace" font-size="9" fill="#8d94a1">
+<text x="14" y="20" fill="#ffb547">// SCHEMATIC 01</text><text x="150" y="40" fill="#ffb547">SPIN CORE</text><text x="112" y="160">360°</text></g>
+</svg></div>
+  <p class="proj"><span data-lang="en">GDD case 01</span><span data-lang="ru">ГДД-кейс 01</span> · Kiss me · social casual · VK, OK, Facebook, Android, PC · 2024-2026</p>
   <h3 data-lang="en">Stopped a revenue decline on a long-running game</h3><h3 data-lang="ru">Остановил спад выручки на многолетней игре</h3>
-  <dl>
-    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
-    <dd data-lang="en">A game with a ten-year history was winding down: metrics were falling, with revenue hit hardest in the quarter before I joined.</dd><dd data-lang="ru">Игра с десятилетней историей «доживала»: падали метрики, а в последнем квартале перед моим приходом особенно критично - выручка.</dd>
-    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
-    <dd data-lang="en">Owned monetization as Lead Game Designer with producer duties: new features, sinks for accumulated resources, offers, events, battle pass rework, roadmap and releases.</dd>
-    <dd data-lang="ru">Отвечал за монетизацию как лид-геймдизайнер с функциями продюсера: новые фичи, стоки накопленных ресурсов, офферы, ивенты, пересборка боевого пропуска, роадмап и релизы.</dd>
-    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
-    <dd data-lang="en"><span class="num">revenue 2x+</span> many monthly revenue records for the game's entire history; growth in LTV, ARPDAU and ARPPDAU; top-5 in its genre by audience and revenue (AppMagic).</dd>
-    <dd data-lang="ru"><span class="num">выручка ×2+</span> множество месячных рекордов выручки за всё время игры; рост LTV, ARPDAU и ARPPDAU; топ-5 в своём жанре по аудитории и выручке (AppMagic).</dd>
-  </dl>
+  <div class="layer"><span class="segs"></span><span class="lhint"><span data-lang="en">Layer <b class="lnum">1</b> of <span class="ltot">4</span> - next →</span><span data-lang="ru">Слой <b class="lnum">1</b> из <span class="ltot">4</span> - дальше →</span></span></div><div class="tabs" role="tablist"><button class="tab on" role="tab" aria-selected="true" data-tab="c1-res"><svg viewBox="0 0 24 24"><path d="M7 4h10v3a5 5 0 0 1-10 0z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/><path d="M12 12v4M8 20h8M9 16h6v4H9z"/></svg><span data-lang="en">Result</span><span data-lang="ru">Итог</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c1-why"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7"/><path d="M12 17h.01"/></svg><span data-lang="en">Why</span><span data-lang="ru">Зачем</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c1-mech"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg><span data-lang="en">Mechanics</span><span data-lang="ru">Механика</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c1-eco"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span data-lang="en">Economy</span><span data-lang="ru">Экономика</span></button></div>
+  <div class="pane on" id="c1-res" role="tabpanel"><p class="big"><span data-lang="en"><span class="num">revenue 2x+</span> many monthly revenue records for the game's entire history; growth in LTV, ARPDAU and ARPPDAU; top-5 in its genre by audience and revenue (AppMagic).</span><span data-lang="ru"><span class="num">выручка ×2+</span> множество месячных рекордов выручки за всё время игры; рост LTV, ARPDAU и ARPPDAU; топ-5 в своём жанре по аудитории и выручке (AppMagic).</span></p></div><div class="pane" id="c1-why" role="tabpanel"><p><span data-lang="en">A game with a ten-year history was winding down: metrics were falling, with revenue hit hardest in the quarter before I joined.</span><span data-lang="ru">Игра с десятилетней историей «доживала»: падали метрики, а в последнем квартале перед моим приходом особенно критично - выручка.</span></p><p class="hyp"><span data-lang="en"><b>Insight:</b> players pay for how others see them, for gifts and attention. I built monetization around this: status, gifts, collections, passes.</span><span data-lang="ru"><b>Наблюдение:</b> игроки платят за то, как их видят другие, за подарки и внимание. Вокруг этого и строил монетизацию: статус, подарки, коллекции, пропуски.</span></p></div><div class="pane" id="c1-mech" role="tabpanel"><ul><li><span data-lang="en">Battle pass rebuilt: one pass for 21 days became three monthly ones - for those who play a lot and pay; for regular players who rarely pay; a challenge pass for everyone.</span><span data-lang="ru">Пересобрал боевой пропуск: один на 21 день стал тремя по месяцу - для тех, кто много играет и платит; для тех, кто играет регулярно, но почти не платит; челлендж для всех.</span></li><li><span data-lang="en">Added loot boxes as a separate monetization mechanic.</span><span data-lang="ru">Добавил лутбоксы как отдельную механику монетизации.</span></li><li><span data-lang="en">Collectible cards and the events around them, from scratch to post-production.</span><span data-lang="ru">Коллекционные карточки и ивенты вокруг них - с нуля до пост-продакшена.</span></li><li><span data-lang="en">Built LiveOps seasonality: events and monthly passes on a calendar planned ahead, themed events with story and characters, A/B tests. Revenue became predictable.</span><span data-lang="ru">Выстроил сезонность LiveOps: ивенты и ежемесячные пропуски по календарю вперёд, тематические ивенты с сюжетом и персонажами, A/B-тесты. Выручка стала прогнозируемой.</span></li></ul></div><div class="pane" id="c1-eco" role="tabpanel"><ul><li><span data-lang="en">Sinks for accumulated resources: reworked existing ones and added new ones.</span><span data-lang="ru">Стоки накопленных ресурсов: пересобирал существующие и вводил новые.</span></li><li><span data-lang="en">Drop chances calculated through distributions, including variance of outcomes.</span><span data-lang="ru">Шансы дропов считал через распределения, включая дисперсию исходов.</span></li><li><span data-lang="en">A/B tests on offer prices and discount depth; payer conversion.</span><span data-lang="ru">A/B-тесты цен и глубины скидок офферов, конверсия в платящих.</span></li><li><span data-lang="en">Battle passes: the second brought 60-70% of the first one's revenue, the third 20-40%; A/B confirmed the version with progression.</span><span data-lang="ru">Пропуски: второй дал 60-70% выручки первого, третий - 20-40%; A/B подтвердил вариант с прогрессией.</span></li><li><span data-lang="en">P&L and payback calculations.</span><span data-lang="ru">P&L и расчёт окупаемости.</span></li></ul></div>
 </div>
 
-<div class="case" id="c2">
-  <p class="proj"><span data-lang="en">Case 02</span><span data-lang="ru">Кейс 02</span> · Tanki Online · multiplayer tank action · 2021-2022</p>
+<div class="case has-art" id="c2">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 260 170">
+<defs><pattern id="bp" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" fill="none" stroke="#ffb54714" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="170" rx="6" fill="url(#bp)" stroke="#ffb54733"/>
+<g fill="none" stroke="#ffb547" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M22 112 L40 92 L70 86 H178 L214 96 L232 112 Z"/>
+<path d="M40 92 L58 104 H200 L214 96"/>
+<path d="M30 112 L40 136 H214 L226 112"/>
+<path d="M46 136 L52 122 H206 L212 136"/>
+<path d="M62 122 V136 M82 122 V136 M102 122 V136 M122 122 V136 M142 122 V136 M162 122 V136 M182 122 V136"/>
+<path d="M88 86 L100 66 L148 62 L166 72 L172 86"/>
+<path d="M112 66 L118 58 H136 L142 63"/>
+<path d="M166 72 H246 M166 79 H246"/>
+<path d="M190 70 V81 M204 70 V81 M218 70 V81"/>
+<path d="M246 70 L252 75.5 L246 81"/>
+<circle cx="126" cy="76" r="4"/>
+<path d="M100 66 V50 M100 50 h8"/>
+</g>
+<g fill="none" stroke="#8d94a1" stroke-width="1" stroke-dasharray="3 3">
+<path d="M22 150 H252"/><path d="M22 145 V155 M252 145 V155"/>
+<path d="M240 86 V136"/><path d="M235 86 H245 M235 136 H245"/>
+<path d="M126 76 L188 40"/>
+</g>
+<g font-family="JetBrains Mono, monospace" font-size="9" fill="#8d94a1">
+<text x="112" y="162">L 8.1 m</text>
+<text x="244" y="104" transform="rotate(90 244 104)">H 1.9</text>
+<text x="150" y="34" fill="#ffb547">RAIL OFFER MK-II</text>
+<text x="14" y="20" fill="#ffb547">// SCHEMATIC 02</text>
+</g>
+</svg></div>
+  <p class="proj"><span data-lang="en">GDD case 02</span><span data-lang="ru">ГДД-кейс 02</span> · Tanki Online · multiplayer tank action · 2021-2022</p>
   <h3 data-lang="en">Rebuilt special offers: more revenue, smaller discounts</h3><h3 data-lang="ru">Пересобрал спецпредложения: больше выручки при меньших скидках</h3>
-  <dl>
-    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
-    <dd data-lang="en">Offers were mostly resource bundles with deep discounts.</dd><dd data-lang="ru">Офферы были в основном наборами ресурсов с большой скидкой.</dd>
-    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
-    <dd data-lang="en">On my own initiative, built a model of targeted offers: each one solves a specific player need.</dd>
-    <dd data-lang="ru">По своей инициативе построил модель целевых офферов: каждый закрывает конкретную задачу игрока.</dd>
-    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
-    <dd data-lang="en"><span class="num">offer revenue 2x</span> with an average discount about 1.5-2x lower.</dd>
-    <dd data-lang="ru"><span class="num">выручка от офферов ×2</span> при средней скидке примерно в 1,5-2 раза ниже.</dd>
-  </dl>
+  <div class="layer"><span class="segs"></span><span class="lhint"><span data-lang="en">Layer <b class="lnum">1</b> of <span class="ltot">4</span> - next →</span><span data-lang="ru">Слой <b class="lnum">1</b> из <span class="ltot">4</span> - дальше →</span></span></div><div class="tabs" role="tablist"><button class="tab on" role="tab" aria-selected="true" data-tab="c2-res"><svg viewBox="0 0 24 24"><path d="M7 4h10v3a5 5 0 0 1-10 0z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/><path d="M12 12v4M8 20h8M9 16h6v4H9z"/></svg><span data-lang="en">Result</span><span data-lang="ru">Итог</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c2-why"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7"/><path d="M12 17h.01"/></svg><span data-lang="en">Why</span><span data-lang="ru">Зачем</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c2-mech"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg><span data-lang="en">Mechanics</span><span data-lang="ru">Механика</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c2-eco"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span data-lang="en">Economy</span><span data-lang="ru">Экономика</span></button></div>
+  <div class="pane on" id="c2-res" role="tabpanel"><p class="big"><span data-lang="en"><span class="num">offer revenue 2x</span> with an average discount about 1.5-2x lower; less gambling in offers.</span><span data-lang="ru"><span class="num">выручка от офферов ×2</span> при средней скидке примерно в 1,5-2 раза ниже; гемблинга в офферах стало меньше.</span></p></div><div class="pane" id="c2-why" role="tabpanel"><p><span data-lang="en">Offers were mostly resource bundles with deep discounts and a share of gambling.</span><span data-lang="ru">Офферы были в основном наборами ресурсов с большой скидкой и долей гемблинга.</span></p><p class="hyp"><span data-lang="en"><b>Logic:</b> a player pays more willingly for an offer that solves their specific need than for "lots of resources, cheap".</span><span data-lang="ru"><b>Логика:</b> игрок охотнее платит за оффер, который закрывает его конкретную задачу, чем за «много ресурсов дёшево».</span></p></div><div class="pane" id="c2-mech" role="tabpanel"><ul><li><span data-lang="en">On my own initiative, built a model of targeted offers: each one solves a specific player need.</span><span data-lang="ru">По своей инициативе построил модель целевых офферов: каждый закрывает свою задачу игрока.</span></li><li><span data-lang="en">Weapon balance, meta and core.</span><span data-lang="ru">Баланс вооружения, меты и кора.</span></li><li><span data-lang="en">Tutorial on all platforms.</span><span data-lang="ru">Туториал на всех платформах.</span></li><li><span data-lang="en">Worked directly with game configs and admin panels.</span><span data-lang="ru">Работал напрямую с конфигами и админками игры.</span></li></ul></div><div class="pane" id="c2-eco" role="tabpanel"><ul><li><span data-lang="en">A/B tests on offer prices and discount depth.</span><span data-lang="ru">A/B-тесты цен и глубины скидок офферов.</span></li><li><span data-lang="en">Takeaway: learned to make things players pay for quickly.</span><span data-lang="ru">Вывод: научился делать вещи, за которые платят быстро.</span></li></ul></div>
 </div>
 
-<div class="case" id="c3">
-  <p class="proj"><span data-lang="en">Case 03</span><span data-lang="ru">Кейс 03</span> · Arcane Crystals: Match-3 RPG · Android · 2022-2024</p>
+<div class="case has-art" id="c3">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 260 170">
+<defs><pattern id="bp3" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" fill="none" stroke="#ffb54714" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="170" rx="6" fill="url(#bp3)" stroke="#ffb54733"/>
+<g fill="none" stroke="#ffb547" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M130 32 L168 62 L156 124 L130 142 L104 124 L92 62 Z"/>
+<path d="M130 32 L118 64 L130 142 L142 64 Z"/>
+<path d="M92 62 H118 M142 62 H168"/>
+<path d="M104 124 L118 64 M156 124 L142 64"/>
+<path d="M60 70 L72 76 M58 96 H72 M60 122 L72 116"/>
+<path d="M200 70 L188 76 M202 96 H188 M200 122 L188 116"/>
+</g>
+<g fill="none" stroke="#8d94a1" stroke-width="1" stroke-dasharray="3 3"><path d="M168 62 L196 40"/><path d="M80 150 H180"/><path d="M80 145 V155 M180 145 V155"/></g>
+<g font-family="JetBrains Mono, monospace" font-size="9" fill="#8d94a1">
+<text x="14" y="20" fill="#ffb547">// SCHEMATIC 03</text><text x="150" y="36" fill="#ffb547">ECON · CORE · META</text><text x="110" y="164">REBUILD 3</text></g>
+</svg></div>
+  <p class="proj"><span data-lang="en">GDD case 03</span><span data-lang="ru">ГДД-кейс 03</span> · Arcane Crystals: Match-3 RPG · Android · 2022-2024</p>
   <h3 data-lang="en">From a team without a game to release</h3><h3 data-lang="ru">От команды без игры до релиза</h3>
-  <dl>
-    <dt data-lang="en">Problem</dt><dt data-lang="ru">Проблема</dt>
-    <dd data-lang="en">I joined when there was a team but no game yet, and the vision changed along the way.</dd><dd data-lang="ru">Пришёл, когда команда была, а игры ещё не было, и вижн по ходу менялся.</dd>
-    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
-    <dd data-lang="en">Designed 3 balance systems and wrote the whole narrative three times, from lore to dialogue. Brought neural networks into the art pipeline and trained the team.</dd>
-    <dd data-lang="ru">Спроектировал 3 системы баланса и трижды написал весь нарратив, от лора до диалогов. Внедрил нейросети в работу художников и обучил команду.</dd>
-    <dt data-lang="en">Result</dt><dt data-lang="ru">Результат</dt>
-    <dd data-lang="en"><span class="num">art 5x faster</span>; the game reached release.</dd>
-    <dd data-lang="ru"><span class="num">арт в 5 раз быстрее</span>; игра вышла в релиз.</dd>
-  </dl>
+  <div class="layer"><span class="segs"></span><span class="lhint"><span data-lang="en">Layer <b class="lnum">1</b> of <span class="ltot">4</span> - next →</span><span data-lang="ru">Слой <b class="lnum">1</b> из <span class="ltot">4</span> - дальше →</span></span></div><div class="tabs" role="tablist"><button class="tab on" role="tab" aria-selected="true" data-tab="c3-res"><svg viewBox="0 0 24 24"><path d="M7 4h10v3a5 5 0 0 1-10 0z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/><path d="M12 12v4M8 20h8M9 16h6v4H9z"/></svg><span data-lang="en">Result</span><span data-lang="ru">Итог</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c3-why"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7"/><path d="M12 17h.01"/></svg><span data-lang="en">Why</span><span data-lang="ru">Зачем</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c3-mech"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg><span data-lang="en">Mechanics</span><span data-lang="ru">Механика</span></button><button class="tab" role="tab" aria-selected="false" data-tab="c3-eco"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span data-lang="en">Economy</span><span data-lang="ru">Экономика</span></button></div>
+  <div class="pane on" id="c3-res" role="tabpanel"><p class="big"><span data-lang="en"><span class="num">art 5x faster</span>; the game reached release.</span><span data-lang="ru"><span class="num">арт в 5 раз быстрее</span>; игра вышла в релиз.</span></p></div><div class="pane" id="c3-why" role="tabpanel"><p><span data-lang="en">I joined when there was a team but no game yet; the vision kept changing, and art was slow.</span><span data-lang="ru">Пришёл, когда команда была, а игры ещё не было; вижн по ходу менялся, а арт делался медленно.</span></p></div><div class="pane" id="c3-mech" role="tabpanel"><ul><li><span data-lang="en">Balance (economy, core, meta) rebuilt from scratch 3 times for the changing vision.</span><span data-lang="ru">Баланс (экономика, кор, мета) пересобирал целиком 3 раза под меняющийся вижн.</span></li><li><span data-lang="en">The whole narrative three times from scratch: lore, script, dialogue.</span><span data-lang="ru">Весь нарратив трижды с нуля: лор, сценарий, диалоги.</span></li><li><span data-lang="en">Levels, difficulty and reward progression.</span><span data-lang="ru">Уровни, прогрессия сложности и наград.</span></li><li><span data-lang="en">Onboarding with modelled funnel expectations.</span><span data-lang="ru">Онбординг с моделированием ожиданий по воронке.</span></li><li><span data-lang="en">Specs for artists and programmers.</span><span data-lang="ru">ТЗ художникам и программистам.</span></li></ul></div><div class="pane" id="c3-eco" role="tabpanel"><ul><li><span data-lang="en">Balance calculators in Google Sheets.</span><span data-lang="ru">Калькуляторы баланса в Google Таблицах.</span></li><li><span data-lang="en">AI in art: Midjourney and Stable Diffusion, then our own fine-tuned model; trained the team.</span><span data-lang="ru">ИИ в арте: Midjourney и Stable Diffusion, потом дообученная своя модель; обучил команду.</span></li></ul></div>
 </div>
 
-<div class="case" id="c4">
-  <p class="proj"><span data-lang="en">Case 04</span><span data-lang="ru">Кейс 04</span> · Last Oasis Survivor · mobile 4X strategy · 2026</p>
+<div class="case has-art" id="c4">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 260 170">
+<defs><pattern id="bp4" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" fill="none" stroke="#ffb54714" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="170" rx="6" fill="url(#bp4)" stroke="#ffb54733"/>
+<g fill="none" stroke="#ffb547" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M86 64 H150 V96 H86 Z"/>
+<path d="M86 64 Q118 50 150 64"/>
+<path d="M92 96 L80 144 M144 96 L156 144 M98 96 L112 144 M138 96 L124 144"/>
+<path d="M84 120 H152"/>
+<path d="M118 76 Q112 84 118 88 Q124 84 118 76 Z"/>
+<path d="M176 132 H200 V144 H176 Z M204 132 H228 V144 H204 Z"/>
+<path d="M176 116 H200 V128 H176 Z" stroke-dasharray="3 2"/>
+<path d="M60 144 H236"/>
+</g>
+<g fill="none" stroke="#8d94a1" stroke-width="1" stroke-dasharray="3 3"><path d="M150 70 L196 42"/><path d="M176 108 V112 M228 108 V112 M176 110 H228"/></g>
+<g font-family="JetBrains Mono, monospace" font-size="9" fill="#8d94a1">
+<text x="14" y="20" fill="#ffb547">// SCHEMATIC 04</text><text x="150" y="38" fill="#ffb547">BUILD QUEUE 2</text><text x="180" y="104">QUEUE</text></g>
+</svg></div>
+  <p class="proj"><span data-lang="en">GDD case 04</span><span data-lang="ru">ГДД-кейс 04</span> · Last Oasis Survivor · mobile 4X strategy · 2026</p>
   <h3 data-lang="en">Contract work on a mobile 4X</h3><h3 data-lang="ru">Контрактная работа над мобильной 4X</h3>
-  <dl>
-    <dt data-lang="en">What I did</dt><dt data-lang="ru">Что сделал</dt>
-    <dd data-lang="en">Second construction queue mechanic, battle pass tables, push notification management, player onboarding. References available on request.</dd>
-    <dd data-lang="ru">Механика второй очереди строительства, таблицы боевого пропуска, система управления пушами, онбординг игроков. Рекомендации - по запросу.</dd>
-  </dl>
+  
+  <div class="pane on" id="c4-mech" role="tabpanel"><ul><li><span data-lang="en">Second construction queue mechanic.</span><span data-lang="ru">Механика второй очереди строительства.</span></li><li><span data-lang="en">Battle pass tables.</span><span data-lang="ru">Таблицы боевого пропуска.</span></li><li><span data-lang="en">Push notification management, player onboarding.</span><span data-lang="ru">Управление пушами, онбординг игроков.</span></li><li><span data-lang="en">PvP territory balance: risk and reward for resource points.</span><span data-lang="ru">Баланс PvP за территории: риск и награда за ресурсные точки.</span></li></ul><p class="note"><span data-lang="en">References available on request.</span><span data-lang="ru">Рекомендации - по запросу.</span></p></div>
 </div>
 
 <h2 id="team" data-lang="en">// How I grew a team</h2><h2 data-lang="ru">// Как я растил команду</h2>
@@ -280,8 +363,8 @@ dd{margin:0;color:var(--soft)}
 
 <h2 id="contact" data-lang="en">// How I can help</h2><h2 data-lang="ru">// Чем могу быть полезен</h2>
 <div class="open">
-  <p data-lang="en">Lead Game Designer or Game Producer roles on F2P games: economy, monetization, LiveOps. Remote. Working language Russian; my written English is fluent.</p>
-  <p data-lang="ru">Роль лид-геймдизайнера или продюсера на F2P: экономика, монетизация, LiveOps. Удалённо. Рабочий язык - русский; письменный английский свободный.</p>
+  <p data-lang="en">Quests I take on: bring revenue growth back to a live game · build the economy and monetization · rebuild offers and the battle pass · build and grow a game design team.</p>
+  <p data-lang="ru">Квесты, которые беру: вернуть рост выручки живой игре · собрать экономику и монетизацию · пересобрать офферы и боевой пропуск · выстроить и вырастить команду геймдизайна.</p>
 </div>
 <div class="links">
   <a class="btn main" href="mailto:chaykin.ns@gmail.com">chaykin.ns@gmail.com</a>
@@ -337,6 +420,8 @@ dd{margin:0;color:var(--soft)}
 function setLang(l){document.body.className=l;document.documentElement.lang=l;document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ru').classList.toggle('on',l==='ru');try{localStorage.setItem('lang',l)}catch(e){}}
 try{var s=localStorage.getItem('lang');if(s)setLang(s);else if((navigator.language||'').startsWith('ru'))setLang('ru')}catch(e){}
 var ov=document.getElementById('ov');
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.case');c.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});c.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on')});b.classList.add('on');b.setAttribute('aria-selected','true');document.getElementById(b.dataset.tab).classList.add('on')})});
+document.querySelectorAll('.case').forEach(function(c){var tabs=[].slice.call(c.querySelectorAll('.tab'));if(!tabs.length)return;var segs=c.querySelector('.segs');var seen={0:true};tabs.forEach(function(){var s=document.createElement('i');segs.appendChild(s)});c.querySelectorAll('.ltot').forEach(function(x){x.textContent=tabs.length});function upd(i){seen[i]=true;[].forEach.call(segs.children,function(s,k){s.className=k===i?'cur':(seen[k]?'seen':'')});c.querySelectorAll('.lnum').forEach(function(x){x.textContent=i+1});tabs.forEach(function(b,k){b.classList.toggle('new',!seen[k])})}tabs.forEach(function(b,i){var pane=document.getElementById(b.dataset.tab);var nx=document.createElement('button');nx.className='nextl';var n=tabs[(i+1)%tabs.length];var en=n.querySelector('[data-lang=en]').textContent,ru=n.querySelector('[data-lang=ru]').textContent;nx.innerHTML=i<tabs.length-1?'<span data-lang="en">Next layer: '+en+' →</span><span data-lang="ru">Дальше: '+ru+' →</span>':'<span data-lang="en">↺ Back to result</span><span data-lang="ru">↺ К итогу</span>';nx.addEventListener('click',function(){n.click();c.scrollIntoView({behavior:'smooth',block:'nearest'})});pane.appendChild(nx);b.addEventListener('click',function(){upd(i)})});upd(0)});
 var tick=null;
 function openRP(){ov.classList.remove('show');void ov.offsetWidth;ov.classList.add('show');var c=document.getElementById('clock'),s=60;c.textContent=s;c.classList.remove('done');clearInterval(tick);tick=setInterval(function(){s--;if(s<=0){clearInterval(tick);c.textContent=document.body.classList.contains('ru')?'Успели. Спасибо за время':'Done. Thanks for your time';c.classList.add('done');c.style.fontSize='13px'}else{c.textContent=s;c.style.fontSize=''}},1000)}
 function closeRP(){ov.classList.remove('show');clearInterval(tick)}
